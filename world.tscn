@@ -59,3 +59,4 @@ transform = Transform3D(0.813558, 0, 0.581484, 0, 1, 0, -0.581484, 0, 0.813558, 
 transform = Transform3D(0.932292, 0, -0.361706, 0, 1, 0, 0.361706, 0, 0.932292, 0.866, 0.85, -3.899)
 
 [node name="PlayerCamera" parent="." instance=ExtResource("3_8dojd")]
+doppler_tracking = 2
