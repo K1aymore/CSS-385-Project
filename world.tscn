@@ -1,0 +1,109 @@
+[gd_scene load_steps=12 format=3 uid="uid://n578pcdueo52"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_0leb3"]
+[ext_resource type="Theme" uid="uid://d28ig3cmjbwey" path="res://new_theme.tres" id="1_0w00n"]
+[ext_resource type="PackedScene" uid="uid://rk1xhtbxj8td" path="res://enemy.tscn" id="2_cm3px"]
+[ext_resource type="PackedScene" uid="uid://dfmyd4iu3e46y" path="res://box.tscn" id="2_p7mdr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c7f8r"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_npoud"]
+sky_material = SubResource("ProceduralSkyMaterial_c7f8r")
+
+[sub_resource type="Environment" id="Environment_g3taa"]
+background_mode = 2
+sky = SubResource("Sky_npoud")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ad2i"]
+albedo_color = Color(0.18, 0.081, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p6qrr"]
+material = SubResource("StandardMaterial3D_4ad2i")
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bj6pp"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsfdf"]
+bg_color = Color(0.311572, 0.700501, 0.28737, 1)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_0leb3")
+metadata/_edit_lock_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g3taa")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+current = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_p6qrr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_bj6pp")
+
+[node name="Box" parent="." instance=ExtResource("2_p7mdr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8668, 2.37043, -3.53739)
+
+[node name="Enemy" parent="." instance=ExtResource("2_cm3px")]
+transform = Transform3D(0.813558, 0, 0.581484, 0, 1, 0, -0.581484, 0, 0.813558, -0.733, 0.85, -2.8)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_cm3px")]
+transform = Transform3D(0.932292, 0, -0.361706, 0, 1, 0, 0.361706, 0, 0.932292, 0.866, 0.85, -3.899)
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="HealthBar" type="ProgressBar" parent="GUI"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 13.0
+offset_right = 179.0
+offset_bottom = 44.0
+theme = ExtResource("1_0w00n")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vsfdf")
+value = 100.0
+
+[node name="Shots" type="ProgressBar" parent="GUI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -39.0
+offset_right = 146.0
+offset_bottom = -12.0
+grow_vertical = 0
+max_value = 6.0
+step = 1.0
+value = 6.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="GUI/Shots"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ammo"
+horizontal_alignment = 1
