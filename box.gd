@@ -12,13 +12,12 @@ func _process(delta: float) -> void:
 
 
 func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton && event.is_pressed():
+	if event is InputEventMouseButton && event.is_pressed() && GUI.shots > 0:
 		freeze = false;
 
 
 
 
 func _on_body_entered(body: Node) -> void:
-	print("Box collided")
 	if body.has_method("hitByBox"):
 		body.hitByBox()

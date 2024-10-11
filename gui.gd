@@ -1,5 +1,6 @@
-extends Node3D
+extends Control
 
+var shots := 6
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,4 +15,6 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton && event.is_pressed():
-		$GUI/Shots.value -= 1
+		if shots > 0:
+			shots -= 1
+			$Shots.value = shots

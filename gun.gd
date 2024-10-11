@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var mousePosition2D = get_viewport().get_mouse_position()
-	var dropPlane  = Plane(Vector3(0, 0, -1), 100)
+	var dropPlane  = Plane(Vector3(0, 0, -1), 10000)
 	
 	var position3D = dropPlane.intersects_ray(
 							 camera.project_ray_origin(mousePosition2D),
