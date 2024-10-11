@@ -12,11 +12,11 @@ size = Vector3(0.5, 1.7, 0.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jq3j"]
 size = Vector3(0.5, 1.7, 0.5)
 
-[node name="Enemy" type="StaticBody3D"]
+[node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1_qege6")
 metadata/_edit_group_ = true
 
-[node name="Sprite3D" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_t3re1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

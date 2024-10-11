@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxy1q668xjxxc"]
+
+[ext_resource type="Script" path="res://gun.gd" id="1_kq0tl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0t8f8"]
+size = Vector3(0.05, 0.05, 0.41)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mn7wj"]
+size = Vector3(0.05, 0.05, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sadge"]
+albedo_color = Color(0.47, 0.297353, 0.1128, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fgvu2"]
+material = SubResource("StandardMaterial3D_sadge")
+size = Vector3(0.055, 0.185, 0.065)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bbwy5"]
+size = Vector3(0.015, 0.021, 0.01)
+
+[node name="Gun" type="Node3D"]
+script = ExtResource("1_kq0tl")
+
+[node name="barrel" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0393685, -0.171626)
+mesh = SubResource("BoxMesh_0t8f8")
+
+[node name="mags" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 0, 0.0398782, -0.113367)
+mesh = SubResource("BoxMesh_mn7wj")
+
+[node name="grip" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.996762, 0.0804077, 0, -0.0804077, 0.996762, 0, -0.0580357, 0.00291212)
+mesh = SubResource("BoxMesh_fgvu2")
+
+[node name="flip" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.918225, -0.396058, 0, 0.396058, 0.918225, 0, 0.0717453, 0.0143677)
+mesh = SubResource("BoxMesh_bbwy5")

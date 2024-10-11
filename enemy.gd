@@ -1,4 +1,4 @@
-extends StaticBody3D
+extends CharacterBody3D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,3 +14,7 @@ func _process(delta: float) -> void:
 func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event is InputEventMouseButton && event.is_pressed():
 		queue_free()
+
+
+func hitByBox():
+	queue_free()

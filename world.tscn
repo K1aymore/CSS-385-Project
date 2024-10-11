@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://n578pcdueo52"]
+[gd_scene load_steps=13 format=3 uid="uid://n578pcdueo52"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_0leb3"]
 [ext_resource type="Theme" uid="uid://d28ig3cmjbwey" path="res://new_theme.tres" id="1_0w00n"]
 [ext_resource type="PackedScene" uid="uid://rk1xhtbxj8td" path="res://enemy.tscn" id="2_cm3px"]
 [ext_resource type="PackedScene" uid="uid://dfmyd4iu3e46y" path="res://box.tscn" id="2_p7mdr"]
+[ext_resource type="PackedScene" uid="uid://bxy1q668xjxxc" path="res://gun.tscn" id="2_qkax5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c7f8r"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -44,6 +45,10 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 current = true
+
+[node name="Gun" parent="Camera3D" node_paths=PackedStringArray("camera") instance=ExtResource("2_qkax5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.284, -0.181885, -0.332659)
+camera = NodePath("..")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
