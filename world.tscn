@@ -2,11 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://rk1xhtbxj8td" path="res://enemy.tscn" id="2_cm3px"]
 [ext_resource type="PackedScene" uid="uid://dfmyd4iu3e46y" path="res://box.tscn" id="2_p7mdr"]
-[ext_resource type="PackedScene" uid="uid://1x73jurcdel" path="res://PlayerCamera.tscn" id="3_8dojd"]
+[ext_resource type="PackedScene" uid="uid://1x73jurcdel" path="res://Player/PlayerCamera.tscn" id="3_8dojd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c7f8r"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+use_debanding = false
 
 [sub_resource type="Sky" id="Sky_npoud"]
 sky_material = SubResource("ProceduralSkyMaterial_c7f8r")
@@ -15,7 +16,7 @@ sky_material = SubResource("ProceduralSkyMaterial_c7f8r")
 background_mode = 2
 sky = SubResource("Sky_npoud")
 ambient_light_color = Color(1, 1, 1, 1)
-tonemap_exposure = 2.0
+tonemap_exposure = 1.5
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ad2i"]

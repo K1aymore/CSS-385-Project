@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://1x73jurcdel"]
 
-[ext_resource type="PackedScene" uid="uid://bxy1q668xjxxc" path="res://gun.tscn" id="1_hnl6c"]
+[ext_resource type="PackedScene" uid="uid://bxy1q668xjxxc" path="res://Player/gun.tscn" id="1_hnl6c"]
 
 [node name="Camera3D" type="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bxy1q668xjxxc"]
 
-[ext_resource type="Script" path="res://gun.gd" id="1_kq0tl"]
+[ext_resource type="Script" path="res://Player/gun.gd" id="1_m3naf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0t8f8"]
 size = Vector3(0.05, 0.05, 0.41)
@@ -19,7 +19,7 @@ size = Vector3(0.055, 0.185, 0.065)
 size = Vector3(0.015, 0.021, 0.01)
 
 [node name="Gun" type="Node3D"]
-script = ExtResource("1_kq0tl")
+script = ExtResource("1_m3naf")
 
 [node name="barrel" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0393685, -0.171626)
