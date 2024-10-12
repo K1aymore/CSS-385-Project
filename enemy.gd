@@ -13,8 +13,8 @@ func _process(delta: float) -> void:
 
 
 func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton && event.is_pressed() && Player.shots >= 0 && alive:
-		apply_impulse(normal * -1, event_position)
+	if event is InputEventMouseButton && event.is_pressed() && Player.shots >= 0:
+		apply_impulse(normal * -50, event_position)
 		alive = false
 
 

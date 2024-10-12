@@ -1,10 +1,12 @@
-extends Node3D
+extends CharacterBody3D
 
 @export var camera : Camera3D
 
+var startPos : Vector3
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	startPos = position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,4 +19,9 @@ func _process(delta: float) -> void:
 							 camera.project_ray_normal(mousePosition2D))
 	
 	if position3D != null:
+		var oldRot = rotation
 		look_at(position3D)
+		var collision = move_and_collide(Vector3.ZERO, true)
+		if collision != null:
+			rotation = oldRot
+		position = startPos
