@@ -19,9 +19,14 @@ func _process(delta: float) -> void:
 							 camera.project_ray_normal(mousePosition2D))
 	
 	if position3D != null:
-		var oldRot = rotation
+		var oldRot := rotation
 		look_at(position3D)
-		var collision = move_and_collide(Vector3.ZERO, true)
-		if collision != null:
-			rotation = oldRot
-		position = startPos
+		var newRot := rotation
+		
+		#rotation = oldRot
+		#
+		#while not (is_equal_approx(rotation.x, newRot.x) or $RayCast3D.is_colliding()):
+			#rotation.x = lerp(rotation.x, newRot.x, 0.01)
+		#
+		#while not (is_equal_approx(rotation.y, newRot.y) or $RayCast3D.is_colliding()):
+			#rotation.y = lerp(rotation.y, newRot.y, 0.01)

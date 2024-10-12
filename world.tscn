@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://n578pcdueo52"]
+[gd_scene load_steps=13 format=3 uid="uid://n578pcdueo52"]
 
 [ext_resource type="PackedScene" uid="uid://rk1xhtbxj8td" path="res://enemy.tscn" id="2_cm3px"]
 [ext_resource type="PackedScene" uid="uid://dfmyd4iu3e46y" path="res://box.tscn" id="2_p7mdr"]
@@ -30,6 +30,12 @@ size = Vector3(100, 0.95, 100)
 size = Vector3(100, 1, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7x5tx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_j1aus"]
+size = Vector3(7.56354, 3.38489, 0.138994)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pq02t"]
+size = Vector3(7.56354, 3.38489, 0.138994)
 
 [node name="World" type="Node3D"]
 metadata/_edit_lock_ = true
@@ -76,9 +82,15 @@ outPoint = NodePath("../outPoint")
 transform = Transform3D(7.56354, 0, 0, 0, 3.38489, 0, 0, 0, 0.138994, -4.13251, 0.75472, 0)
 mesh = SubResource("BoxMesh_7x5tx")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(7.56354, 0, 0, 0, 3.38489, 0, 0, 0, 0.138994, 4.1957, 0.75472, 0)
-mesh = SubResource("BoxMesh_7x5tx")
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1957, 0.75472, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_j1aus")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_pq02t")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(7.56354, 0, 0, 0, 0.846463, 0, 0, 0, 0.138994, 0.046, 1.814, 0)
