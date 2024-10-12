@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://n578pcdueo52"]
+[gd_scene load_steps=11 format=3 uid="uid://n578pcdueo52"]
 
 [ext_resource type="PackedScene" uid="uid://rk1xhtbxj8td" path="res://enemy.tscn" id="2_cm3px"]
 [ext_resource type="PackedScene" uid="uid://dfmyd4iu3e46y" path="res://box.tscn" id="2_p7mdr"]
@@ -29,6 +29,8 @@ size = Vector3(100, 1, 100)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bj6pp"]
 size = Vector3(100, 1, 100)
 
+[sub_resource type="BoxMesh" id="BoxMesh_7x5tx"]
+
 [node name="World" type="Node3D"]
 metadata/_edit_lock_ = true
 
@@ -58,5 +60,35 @@ transform = Transform3D(0.813558, 0, 0.581484, 0, 1, 0, -0.581484, 0, 0.813558, 
 [node name="Enemy2" parent="." instance=ExtResource("2_cm3px")]
 transform = Transform3D(0.932292, 0, -0.361706, 0, 1, 0, 0.361706, 0, 0.932292, 0.866, 0.85, -3.899)
 
-[node name="PlayerCamera" parent="." instance=ExtResource("3_8dojd")]
+[node name="Enemy3" parent="." instance=ExtResource("2_cm3px")]
+transform = Transform3D(0.932292, 0, -0.361706, 0, 1, 0, 0.361706, 0, 0.932292, -2.38337, 0.85, -3.51335)
+
+[node name="Enemy4" parent="." instance=ExtResource("2_cm3px")]
+transform = Transform3D(0.932292, 0, -0.361706, 0, 1, 0, 0.361706, 0, 0.932292, -1.1753, 0.85, -5.25409)
+
+[node name="PlayerCamera" parent="." node_paths=PackedStringArray("hidePoint", "outPoint") instance=ExtResource("3_8dojd")]
+transform = Transform3D(0.760406, 0, -0.649448, 0, 1, 0, 0.649448, 0, 0.760406, -0.768, 0.67, 0.383)
 doppler_tracking = 2
+hidePoint = NodePath("../hidePoint")
+outPoint = NodePath("../outPoint")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.56354, 0, 0, 0, 3.38489, 0, 0, 0, 0.138994, -4.13251, 0.75472, 0)
+mesh = SubResource("BoxMesh_7x5tx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.56354, 0, 0, 0, 3.38489, 0, 0, 0, 0.138994, 4.1957, 0.75472, 0)
+mesh = SubResource("BoxMesh_7x5tx")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.56354, 0, 0, 0, 0.846463, 0, 0, 0, 0.138994, 0.046, 1.814, 0)
+mesh = SubResource("BoxMesh_7x5tx")
+
+[node name="outPoint" type="Node3D" parent="."]
+transform = Transform3D(0.999123, 0, 0.0418757, 0, 1, 0, -0.0418757, 0, 0.999123, 0.007, 1.105, 0.408)
+
+[node name="hidePoint" type="Node3D" parent="."]
+transform = Transform3D(0.844328, -0.0243067, -0.535275, 0, 0.998971, -0.045363, 0.535827, 0.0383012, 0.843459, -0.623, 0.645, 0.439)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24582, 1.80059, 1.40661)

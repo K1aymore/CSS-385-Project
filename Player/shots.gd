@@ -1,6 +1,6 @@
-extends Control
+extends TextureRect
 
-var shots : float = 6.0
+var amount : float = 6.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,11 +10,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	shots = clamp(shots, -1, 6)
-	$Shots.amount = shots
-
-
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton && event.is_pressed():
-		shots -= 1
+	for i in 6:
+		if i < floor(amount):
+			get_child(i).show()
+		else:
+			get_child(i).hide()

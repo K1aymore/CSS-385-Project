@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmwmpe87t8ufl"]
+[gd_scene load_steps=7 format=3 uid="uid://dmwmpe87t8ufl"]
 
 [ext_resource type="Theme" uid="uid://d28ig3cmjbwey" path="res://new_theme.tres" id="1_cyfge"]
 [ext_resource type="Script" path="res://Player/player.gd" id="2_gj3l2"]
+[ext_resource type="Texture2D" uid="uid://6gsxo47r0o0c" path="res://Player/RevolverBack.png" id="3_sf850"]
+[ext_resource type="Script" path="res://Player/shots.gd" id="4_2ggd4"]
+[ext_resource type="Texture2D" uid="uid://croilin7pwuym" path="res://Player/RevolverBullet.png" id="4_3juda"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsfdf"]
 bg_color = Color(0.311572, 0.700501, 0.28737, 1)
@@ -27,29 +30,74 @@ theme = ExtResource("1_cyfge")
 theme_override_styles/fill = SubResource("StyleBoxFlat_vsfdf")
 value = 100.0
 
-[node name="Shots" type="ProgressBar" parent="."]
+[node name="Shots" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 25.0
-offset_top = -41.0
+offset_left = 13.0
+offset_top = -100.0
 offset_right = 113.0
-offset_bottom = -12.0
 grow_vertical = 0
-max_value = 6.0
-step = 1.0
-value = 6.0
-show_percentage = false
-metadata/_edit_group_ = true
+texture = ExtResource("3_sf850")
+expand_mode = 1
+script = ExtResource("4_2ggd4")
 
-[node name="Label" type="Label" parent="Shots"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Ammo"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Bullet" type="TextureRect" parent="Shots"]
+layout_mode = 0
+offset_top = -13.0
+offset_right = 100.0
+offset_bottom = 87.0
+pivot_offset = Vector2(50, 63)
+texture = ExtResource("4_3juda")
+expand_mode = 1
+
+[node name="Bullet2" type="TextureRect" parent="Shots"]
+layout_mode = 0
+offset_top = -13.0
+offset_right = 100.0
+offset_bottom = 87.0
+rotation = -1.0472
+pivot_offset = Vector2(50, 63)
+texture = ExtResource("4_3juda")
+expand_mode = 1
+
+[node name="Bullet3" type="TextureRect" parent="Shots"]
+layout_mode = 0
+offset_top = -13.0
+offset_right = 100.0
+offset_bottom = 87.0
+rotation = -2.0944
+pivot_offset = Vector2(50, 63)
+texture = ExtResource("4_3juda")
+expand_mode = 1
+
+[node name="Bullet4" type="TextureRect" parent="Shots"]
+layout_mode = 0
+offset_top = -13.0
+offset_right = 100.0
+offset_bottom = 87.0
+rotation = -3.14159
+pivot_offset = Vector2(50, 63)
+texture = ExtResource("4_3juda")
+expand_mode = 1
+
+[node name="Bullet5" type="TextureRect" parent="Shots"]
+layout_mode = 0
+offset_top = -13.0
+offset_right = 100.0
+offset_bottom = 87.0
+rotation = -4.18879
+pivot_offset = Vector2(50, 63)
+texture = ExtResource("4_3juda")
+expand_mode = 1
+
+[node name="Bullet6" type="TextureRect" parent="Shots"]
+layout_mode = 0
+offset_top = -13.0
+offset_right = 100.0
+offset_bottom = 87.0
+rotation = -5.23599
+pivot_offset = Vector2(50, 63)
+texture = ExtResource("4_3juda")
+expand_mode = 1

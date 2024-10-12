@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://1x73jurcdel"]
+[gd_scene load_steps=3 format=3 uid="uid://1x73jurcdel"]
 
 [ext_resource type="PackedScene" uid="uid://bxy1q668xjxxc" path="res://Player/gun.tscn" id="1_hnl6c"]
+[ext_resource type="Script" path="res://Player/player_camera.gd" id="1_wed6p"]
 
 [node name="Camera3D" type="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 size = 0.085
 frustum_offset = Vector2(-0.39, 0)
+script = ExtResource("1_wed6p")
 
 [node name="Gun" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_hnl6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.284, -0.181885, -0.332659)

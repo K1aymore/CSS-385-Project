@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://rk1xhtbxj8td"]
+[gd_scene load_steps=6 format=3 uid="uid://rk1xhtbxj8td"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_qege6"]
+[ext_resource type="Texture2D" uid="uid://c8msxkt0he73q" path="res://zombie.png" id="2_w6d18"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ule1q"]
-albedo_color = Color(0.54, 0, 0, 1)
+albedo_texture = ExtResource("2_w6d18")
 
 [sub_resource type="BoxMesh" id="BoxMesh_t3re1"]
 material = SubResource("StandardMaterial3D_ule1q")
@@ -12,12 +13,17 @@ size = Vector3(0.5, 1.7, 0.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jq3j"]
 size = Vector3(0.5, 1.7, 0.5)
 
-[node name="Enemy" type="CharacterBody3D"]
+[node name="Enemy" type="RigidBody3D"]
 script = ExtResource("1_qege6")
 metadata/_edit_group_ = true
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_t3re1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_7jq3j")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+texture = ExtResource("2_w6d18")

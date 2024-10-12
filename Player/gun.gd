@@ -16,4 +16,5 @@ func _process(delta: float) -> void:
 							 camera.project_ray_origin(mousePosition2D),
 							 camera.project_ray_normal(mousePosition2D))
 	
-	look_at(position3D)
+	if position3D != null:
+		look_at(position3D)

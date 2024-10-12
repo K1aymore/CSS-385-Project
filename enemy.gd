@@ -1,5 +1,6 @@
-extends CharacterBody3D
+extends RigidBody3D
 
+var alive := true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,8 +13,9 @@ func _process(delta: float) -> void:
 
 
 func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton && event.is_pressed() && Player.shots > 0:
-		queue_free()
+	if event is InputEventMouseButton && event.is_pressed() && Player.shots >= 0 && alive:
+		apply_impulse(normal * -1, event_position)
+		alive = false
 
 
 func hitByBox():
