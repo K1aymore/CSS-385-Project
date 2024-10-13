@@ -1,7 +1,8 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://d28ig3cmjbwey"]
 
-[ext_resource type="FontFile" uid="uid://bv20ox1wi80j2" path="res://fonts/tiny.ttf" id="1_xc4n0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cisg"]
+bg_color = Color(0.221902, 0.221902, 0.221902, 1)
 
 [resource]
-default_font = ExtResource("1_xc4n0")
 default_font_size = 18
+ProgressBar/styles/background = SubResource("StyleBoxFlat_7cisg")

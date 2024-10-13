@@ -1,6 +1,7 @@
 extends Control
 
 var shots : float = 6.0
+var faith := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,7 +12,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	shots = clamp(shots, -1, 6)
-	$Shots.amount = shots
+	$Shots.value = shots
+	$FaithLabel.text = str("Noteriety: ", faith)
+	
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
 
 
 

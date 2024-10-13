@@ -1,6 +1,6 @@
 extends TextureRect
 
-var amount : float = 6.0
+var value : float = 6.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,7 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	for i in 6:
-		if i < floor(amount):
+		if i < floor(value):
 			get_child(i).show()
 		else:
 			get_child(i).hide()
