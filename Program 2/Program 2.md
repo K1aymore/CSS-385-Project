@@ -4,4 +4,4 @@ The interaction model is shooting. The player can move the mouse and click on en
 This interaction can be used not only to kill enemies, but to interact with other parts of the world. There could also be civilians you need to avoid shooting, and special powers and more advanced trickshots and things like that. It could also be used for navigation, like shooting a train switch or using like a whip swing ability, but that's a bit too crazy for this project.
 
 
-My friend made the revolver model and the ammo display graphic.
+My friend made the revolver model, the ammo display graphic, and the font.
