@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmwmpe87t8ufl"]
+[gd_scene load_steps=8 format=3 uid="uid://dmwmpe87t8ufl"]
 
 [ext_resource type="Theme" uid="uid://d28ig3cmjbwey" path="res://new_theme.tres" id="1_cyfge"]
 [ext_resource type="Script" path="res://Player/player.gd" id="2_gj3l2"]
 [ext_resource type="Texture2D" uid="uid://6gsxo47r0o0c" path="res://Player/RevolverBack.png" id="3_sf850"]
 [ext_resource type="Script" path="res://Player/shots.gd" id="4_2ggd4"]
 [ext_resource type="Texture2D" uid="uid://croilin7pwuym" path="res://Player/RevolverBullet.png" id="4_3juda"]
+[ext_resource type="Texture2D" uid="uid://mb73j03jreov" path="res://Player/reticle.png" id="6_5oxu2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsfdf"]
 bg_color = Color(0.311572, 0.700501, 0.28737, 1)
@@ -121,15 +122,20 @@ vertical_alignment = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -323.0
-offset_top = -50.0
-offset_right = -11.0
-offset_bottom = -23.0
-grow_horizontal = 0
+offset_left = -88.0
+offset_top = -55.0
+offset_right = 224.0
+offset_bottom = -28.0
+grow_horizontal = 2
 grow_vertical = 2
 text = "Pack my box with five dozen liquor jugs."
+
+[node name="Mouse" type="Sprite2D" parent="."]
+position = Vector2(158.925, 43.55)
+scale = Vector2(0.168, 0.168)
+texture = ExtResource("6_5oxu2")
