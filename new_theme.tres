@@ -1,8 +1,10 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://d28ig3cmjbwey"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://d28ig3cmjbwey"]
+
+[ext_resource type="FontFile" uid="uid://jx0n7yvc1f5l" path="res://fonts/WesternComplete.ttf" id="1_77f1n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cisg"]
 bg_color = Color(0.221902, 0.221902, 0.221902, 1)
 
 [resource]
-default_font_size = 18
+default_font = ExtResource("1_77f1n")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_7cisg")
