@@ -136,6 +136,7 @@ grow_vertical = 2
 text = "Pack my box with five dozen liquor jugs."
 
 [node name="Mouse" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(158.925, 43.55)
 scale = Vector2(0.168, 0.168)
 texture = ExtResource("6_5oxu2")
