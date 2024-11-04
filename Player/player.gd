@@ -1,5 +1,7 @@
 extends Control
 
+var level
+
 var softwareCursor := false
 
 
@@ -8,15 +10,12 @@ var faith := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-
+	level = get_parent().get_child(1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().quit()
 	
 	$Mouse.visible = softwareCursor
 	if softwareCursor:

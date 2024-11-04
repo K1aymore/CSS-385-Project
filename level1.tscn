@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://n578pcdueo52"]
+[gd_scene load_steps=14 format=3 uid="uid://n578pcdueo52"]
 
-[ext_resource type="PackedScene" uid="uid://rk1xhtbxj8td" path="res://enemy.tscn" id="2_cm3px"]
-[ext_resource type="PackedScene" uid="uid://dfmyd4iu3e46y" path="res://box.tscn" id="2_p7mdr"]
-[ext_resource type="PackedScene" uid="uid://1x73jurcdel" path="res://Player/PlayerCamera.tscn" id="3_8dojd"]
+[ext_resource type="PackedScene" uid="uid://dfmyd4iu3e46y" path="res://box.tscn" id="1_akay3"]
+[ext_resource type="Script" path="res://level.gd" id="1_csyl2"]
+[ext_resource type="PackedScene" uid="uid://rk1xhtbxj8td" path="res://enemy.tscn" id="2_ql5jd"]
+[ext_resource type="PackedScene" uid="uid://1x73jurcdel" path="res://Player/PlayerCamera.tscn" id="3_p05fn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c7f8r"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -37,7 +38,8 @@ size = Vector3(7.56354, 3.38489, 0.138994)
 [sub_resource type="BoxShape3D" id="BoxShape3D_pq02t"]
 size = Vector3(7.56354, 3.38489, 0.138994)
 
-[node name="World" type="Node3D"]
+[node name="Level1" type="Node3D"]
+script = ExtResource("1_csyl2")
 metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -57,22 +59,24 @@ mesh = SubResource("BoxMesh_p6qrr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("BoxShape3D_bj6pp")
 
-[node name="Box" parent="." instance=ExtResource("2_p7mdr")]
+[node name="Box" parent="." instance=ExtResource("1_akay3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8668, 2.37043, -3.53739)
 
-[node name="Enemy" parent="." instance=ExtResource("2_cm3px")]
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("2_ql5jd")]
 transform = Transform3D(0.813558, 0, 0.581484, 0, 1, 0, -0.581484, 0, 0.813558, -0.733, 0.85, -2.8)
 
-[node name="Enemy2" parent="." instance=ExtResource("2_cm3px")]
+[node name="Enemy2" parent="Enemies" instance=ExtResource("2_ql5jd")]
 transform = Transform3D(0.932292, 0, -0.361706, 0, 1, 0, 0.361706, 0, 0.932292, 0.866, 0.85, -3.899)
 
-[node name="Enemy3" parent="." instance=ExtResource("2_cm3px")]
+[node name="Enemy3" parent="Enemies" instance=ExtResource("2_ql5jd")]
 transform = Transform3D(0.932292, 0, -0.361706, 0, 1, 0, 0.361706, 0, 0.932292, -2.38337, 0.85, -3.51335)
 
-[node name="Enemy4" parent="." instance=ExtResource("2_cm3px")]
+[node name="Enemy4" parent="Enemies" instance=ExtResource("2_ql5jd")]
 transform = Transform3D(0.932292, 0, -0.361706, 0, 1, 0, 0.361706, 0, 0.932292, -1.1753, 0.85, -5.25409)
 
-[node name="PlayerCamera" parent="." node_paths=PackedStringArray("hidePoint", "outPoint") instance=ExtResource("3_8dojd")]
+[node name="PlayerCamera" parent="." node_paths=PackedStringArray("hidePoint", "outPoint") instance=ExtResource("3_p05fn")]
 transform = Transform3D(0.760406, 0, -0.649448, 0, 1, 0, 0.649448, 0, 0.760406, -0.768, 0.67, 0.383)
 doppler_tracking = 2
 hidePoint = NodePath("../hidePoint")
