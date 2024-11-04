@@ -2,7 +2,7 @@ extends Control
 
 var level
 
-var softwareCursor := false
+var softwareCursor := true
 
 
 var shots : float = 6.0
@@ -16,14 +16,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	
-	$Mouse.visible = softwareCursor
-	if softwareCursor:
-		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-		$Mouse.position = get_local_mouse_position()
-	else:
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	
+	$Mouse.enabled = softwareCursor
 	
 	shots = clamp(shots, -1, 6)
 	$Shots.value = shots

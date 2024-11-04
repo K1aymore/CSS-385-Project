@@ -24,6 +24,7 @@ size = Vector3(0.015, 0.021, 0.01)
 size = Vector3(0.0533057, 0.0675, 0.41644)
 
 [node name="Gun" type="CharacterBody3D"]
+process_mode = 3
 axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true

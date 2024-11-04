@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dmwmpe87t8ufl"]
+[gd_scene load_steps=12 format=3 uid="uid://dmwmpe87t8ufl"]
 
 [ext_resource type="Theme" uid="uid://d28ig3cmjbwey" path="res://new_theme.tres" id="1_cyfge"]
 [ext_resource type="Script" path="res://Player/player.gd" id="2_gj3l2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://croilin7pwuym" path="res://Player/RevolverBullet.png" id="4_3juda"]
 [ext_resource type="Texture2D" uid="uid://mb73j03jreov" path="res://Player/reticle.png" id="6_5oxu2"]
 [ext_resource type="Script" path="res://Player/pause_menu.gd" id="7_7k6nm"]
+[ext_resource type="Script" path="res://Player/mouse.gd" id="8_brhoe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsfdf"]
 bg_color = Color(0.311572, 0.700501, 0.28737, 1)
@@ -28,7 +29,6 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_cyfge")
 script = ExtResource("2_gj3l2")
-metadata/_edit_lock_ = true
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 layout_mode = 0
@@ -144,12 +144,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Pack my box with five dozen liquor jugs."
 
-[node name="Mouse" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(158.925, 43.55)
-scale = Vector2(0.168, 0.168)
-texture = ExtResource("6_5oxu2")
-
 [node name="PauseMenu" type="Control" parent="."]
 process_mode = 3
 layout_mode = 1
@@ -168,6 +162,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_kl4w0")
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
 layout_mode = 1
@@ -176,32 +171,44 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -39.5
+offset_top = -60.5
+offset_right = 39.5
+offset_bottom = 60.5
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_group_ = true
 
 [node name="ResumeButton" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 6
 focus_mode = 0
 text = "Resume"
 
 [node name="SaveButton" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 6
 focus_mode = 0
 text = "Save"
 
 [node name="LoadButton" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 6
 focus_mode = 0
 text = "Load"
 
 [node name="QuitButton" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 6
 focus_mode = 0
 text = "Quit"
+
+[node name="Mouse" type="Sprite2D" parent="."]
+process_mode = 3
+position = Vector2(158.925, 43.55)
+scale = Vector2(0.168, 0.168)
+texture = ExtResource("6_5oxu2")
+script = ExtResource("8_brhoe")
 
 [connection signal="pressed" from="PauseMenu/VBoxContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/SaveButton" to="PauseMenu" method="_on_save_button_pressed"]
