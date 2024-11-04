@@ -185,18 +185,22 @@ grow_vertical = 2
 
 [node name="ResumeButton" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 text = "Resume"
 
 [node name="SaveButton" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 text = "Save"
 
 [node name="LoadButton" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 text = "Load"
 
 [node name="QuitButton" type="Button" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 text = "Quit"
 
 [connection signal="pressed" from="PauseMenu/VBoxContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]

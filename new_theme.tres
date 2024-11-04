@@ -1,10 +1,47 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://d28ig3cmjbwey"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://d28ig3cmjbwey"]
 
 [ext_resource type="FontFile" uid="uid://jx0n7yvc1f5l" path="res://fonts/WesternComplete.ttf" id="1_77f1n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2aomo"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.2, 0.2, 0.2, 0)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8g2wc"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.2, 0.2, 0.2, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tuk7"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.15, 0.15, 0.15, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tky5f"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.25, 0.25, 0.25, 1)
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cisg"]
 bg_color = Color(0.221902, 0.221902, 0.221902, 1)
 
 [resource]
 default_font = ExtResource("1_77f1n")
+Button/styles/disabled = null
+Button/styles/focus = SubResource("StyleBoxFlat_2aomo")
+Button/styles/hover = SubResource("StyleBoxFlat_8g2wc")
+Button/styles/normal = SubResource("StyleBoxFlat_8tuk7")
+Button/styles/pressed = SubResource("StyleBoxFlat_tky5f")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_7cisg")
