@@ -14,11 +14,15 @@ func _process(delta: float) -> void:
 
 func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event is InputEventMouseButton && event.is_pressed() && Player.shots >= 0:
-		apply_impulse(normal * -50, event_position)
-		Player.faith += 1
-		alive = false
+		die(1)
 
 
 func hitByBox():
-	Player.faith += 10
+	die(10)
+
+
+func die(faith):
+	Player.faith += faith
+	alive = false
 	queue_free()
+	

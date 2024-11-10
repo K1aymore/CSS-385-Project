@@ -1,5 +1,7 @@
 extends Node3D
 
+@onready var Enemies : Node3D = %Enemies
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,7 +21,7 @@ func load():
 		return # Error! We don't have a save to load.
 	
 	# delete starting enemies
-	for enemy in $Enemies.get_children():
+	for enemy in Enemies.get_children():
 		enemy.queue_free()
 	
 	
@@ -59,7 +61,7 @@ func load():
 				"rot-z":
 					newEnemy.rotation.z = nodeData["rot-z"]
 		
-		$Enemies.add_child(newEnemy)
+		Enemies.add_child(newEnemy)
 	
 	
 	
@@ -73,7 +75,7 @@ func save():
 	
 	print(saveFile)
 	
-	for enemy in $Enemies.get_children():
+	for enemy in Enemies.get_children():
 		var saveData  = {
 			"pos-x": enemy.position.x,
 			"pos-y": enemy.position.y,
