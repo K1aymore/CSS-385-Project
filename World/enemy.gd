@@ -1,5 +1,6 @@
 extends RigidBody3D
 
+@onready var Player := %Player
 var alive := true
 
 # Called when the node enters the scene tree for the first time.

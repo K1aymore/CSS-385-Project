@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://n578pcdueo52"]
+[gd_scene load_steps=14 format=3 uid="uid://n578pcdueo52"]
 
-[ext_resource type="Script" path="res://level.gd" id="1_csyl2"]
-[ext_resource type="PackedScene" uid="uid://1x73jurcdel" path="res://Player/PlayerCamera.tscn" id="3_p05fn"]
+[ext_resource type="Script" path="res://Levels/level.gd" id="1_csyl2"]
+[ext_resource type="PackedScene" uid="uid://1x73jurcdel" path="res://Player/PlayerCamera.tscn" id="3_065y4"]
+[ext_resource type="PackedScene" uid="uid://dmwmpe87t8ufl" path="res://Player/player.tscn" id="3_rswlm"]
+[ext_resource type="Script" path="res://World/path.gd" id="3_tipha"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c7f8r"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -228,16 +230,7 @@ skeleton = NodePath("../../..")
 [node name="Lights" type="Node3D" parent="Map"]
 metadata/_edit_lock_ = true
 
-[node name="Path" type="Node3D" parent="Map"]
-metadata/_edit_lock_ = true
-
-[node name="hidePoint" type="Node3D" parent="Map/Path"]
-transform = Transform3D(0.844328, -0.0243067, -0.535275, 0, 0.998971, -0.045363, 0.535827, 0.0383012, 0.843459, -0.622999, 0.645, 0.439)
-
-[node name="outPoint" type="Node3D" parent="Map/Path/hidePoint"]
-transform = Transform3D(0.821149, 7.26431e-08, 0.570713, -0.0258893, 0.99897, 0.0372498, -0.570126, -0.0453629, 0.820304, 0.515316, 0.443026, -0.384237)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Map"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Map/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.32825, 1.12351, -11.2987)
 light_color = Color(0.815735, 0.557818, 0.467316, 1)
 light_energy = 11.37
@@ -245,7 +238,7 @@ light_bake_mode = 1
 shadow_enabled = true
 omni_range = 20.258
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Map"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="Map/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8499, 7.21992, -9.2737)
 light_color = Color(0.815735, 0.557818, 0.467316, 1)
 light_energy = 1.63
@@ -253,7 +246,7 @@ light_bake_mode = 1
 shadow_enabled = true
 omni_range = 16.258
 
-[node name="Candle" type="OmniLight3D" parent="Map"]
+[node name="Candle" type="OmniLight3D" parent="Map/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.446583, 7.06268, -14.6421)
 light_color = Color(0.815735, 0.557818, 0.467316, 1)
 light_energy = 1.675
@@ -261,7 +254,7 @@ light_bake_mode = 1
 shadow_enabled = true
 omni_range = 9.163
 
-[node name="Candle2" type="OmniLight3D" parent="Map"]
+[node name="Candle2" type="OmniLight3D" parent="Map/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.45046, 7.06268, -10.741)
 light_color = Color(0.815735, 0.557818, 0.467316, 1)
 light_energy = 0.16
@@ -269,7 +262,7 @@ light_bake_mode = 1
 shadow_enabled = true
 omni_range = 9.163
 
-[node name="Candle3" type="OmniLight3D" parent="Map"]
+[node name="Candle3" type="OmniLight3D" parent="Map/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.96392, 7.06268, -4.63264)
 light_color = Color(0.815735, 0.557818, 0.467316, 1)
 light_energy = 0.95
@@ -277,7 +270,7 @@ light_bake_mode = 1
 shadow_enabled = true
 omni_range = 9.163
 
-[node name="Candle4" type="OmniLight3D" parent="Map"]
+[node name="Candle4" type="OmniLight3D" parent="Map/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31496, 7.06268, -5.24153)
 light_color = Color(0.815735, 0.557818, 0.467316, 1)
 light_energy = 1.675
@@ -285,12 +278,29 @@ light_bake_mode = 1
 shadow_enabled = true
 omni_range = 9.163
 
+[node name="Path" type="Node3D" parent="Map"]
+script = ExtResource("3_tipha")
+metadata/_edit_lock_ = true
+
+[node name="PlayerCamera" parent="Map/Path" instance=ExtResource("3_065y4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28289, 0.441115)
+doppler_tracking = 2
+
+[node name="out" type="Node3D" parent="Map/Path"]
+metadata/_edit_lock_ = true
+
+[node name="Node3D" type="Node3D" parent="Map/Path/out"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28289, 0.441115)
+
+[node name="hide" type="Node3D" parent="Map/Path"]
+metadata/_edit_lock_ = true
+
+[node name="Node3D" type="Node3D" parent="Map/Path/hide"]
+transform = Transform3D(0.12722, 0, -0.991874, 0, 1, 0, 0.991874, 0, 0.12722, -1.70645, 1.13344, 1.29841)
+
 [node name="Enemies" type="Node3D" parent="Map"]
 unique_name_in_owner = true
 metadata/_edit_lock_ = true
 
-[node name="PlayerCamera" parent="." node_paths=PackedStringArray("hidePoint", "outPoint") instance=ExtResource("3_p05fn")]
-transform = Transform3D(0.760406, 0, -0.649448, 0, 1, 0, 0.649448, 0, 0.760406, -0.768, 0.67, 0.383)
-doppler_tracking = 2
-hidePoint = NodePath("../Map/Path/hidePoint")
-outPoint = NodePath("../Map/Path/hidePoint/outPoint")
+[node name="Player" parent="." instance=ExtResource("3_rswlm")]
+unique_name_in_owner = true

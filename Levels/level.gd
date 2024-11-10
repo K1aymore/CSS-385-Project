@@ -1,5 +1,6 @@
 extends Node3D
 
+@onready var Player := %Player
 @onready var Enemies : Node3D = %Enemies
 
 
@@ -14,7 +15,7 @@ func _process(delta: float) -> void:
 
 
 func load():
-	var enemyScene := preload("res://enemy.tscn")
+	var enemyScene := preload("res://World/enemy.tscn")
 	
 	if not FileAccess.file_exists("user://savegame.json"):
 		print("savegame.save does not exist")
