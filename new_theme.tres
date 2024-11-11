@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://d28ig3cmjbwey"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://d28ig3cmjbwey"]
 
 [ext_resource type="FontFile" uid="uid://jx0n7yvc1f5l" path="res://fonts/WesternComplete.ttf" id="1_77f1n"]
 
@@ -37,6 +37,18 @@ anti_aliasing = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cisg"]
 bg_color = Color(0.221902, 0.221902, 0.221902, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqtb4"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtk2h"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_left = 4.0
+expand_margin_right = 3.0
+
 [resource]
 default_font = ExtResource("1_77f1n")
 Button/styles/disabled = null
@@ -45,3 +57,11 @@ Button/styles/hover = SubResource("StyleBoxFlat_8g2wc")
 Button/styles/normal = SubResource("StyleBoxFlat_8tuk7")
 Button/styles/pressed = SubResource("StyleBoxFlat_tky5f")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_7cisg")
+TabContainer/constants/icon_max_width = 0
+TabContainer/constants/icon_separation = 4
+TabContainer/constants/outline_size = 0
+TabContainer/constants/side_margin = 8
+TabContainer/styles/panel = SubResource("StyleBoxFlat_yqtb4")
+TabContainer/styles/tab_focus = null
+TabContainer/styles/tab_hovered = null
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_gtk2h")

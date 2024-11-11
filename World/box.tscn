@@ -3,14 +3,14 @@
 [ext_resource type="Script" path="res://World/box.gd" id="1_6dp1v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_waiyu"]
-albedo_color = Color(0.18, 0.081, 0, 1)
+albedo_color = Color(0.42, 0, 0.0490001, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rc4br"]
 material = SubResource("StandardMaterial3D_waiyu")
 size = Vector3(0.75, 0.75, 0.75)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s6wpr"]
-size = Vector3(0.75, 0.75, 0.5)
+size = Vector3(0.75, 0.75, 0.75)
 
 [node name="Box" type="RigidBody3D"]
 freeze = true

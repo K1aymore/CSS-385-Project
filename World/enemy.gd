@@ -26,7 +26,6 @@ func hitByBox():
 
 
 func die(faith):
-	print("oh no death")
 	Player.faith += faith
 	alive = false
 	queue_free()
