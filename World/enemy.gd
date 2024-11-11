@@ -1,7 +1,8 @@
-extends RigidBody3D
+extends CharacterBody3D
 
 @onready var Player := %Player
 var alive := true
+var health := 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +16,9 @@ func _process(delta: float) -> void:
 
 func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event is InputEventMouseButton && event.is_pressed() && Player.shots >= 0:
-		die(1)
+		health -= 1
+		if health <= 0:
+			die(1)
 
 
 func hitByBox():
@@ -23,6 +26,7 @@ func hitByBox():
 
 
 func die(faith):
+	print("oh no death")
 	Player.faith += faith
 	alive = false
 	queue_free()

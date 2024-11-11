@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://n578pcdueo52"]
+[gd_scene load_steps=16 format=3 uid="uid://n578pcdueo52"]
 
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_csyl2"]
+[ext_resource type="PackedScene" uid="uid://dfmyd4iu3e46y" path="res://World/box.tscn" id="2_8gf2c"]
 [ext_resource type="PackedScene" uid="uid://1x73jurcdel" path="res://Player/PlayerCamera.tscn" id="3_065y4"]
 [ext_resource type="PackedScene" uid="uid://dmwmpe87t8ufl" path="res://Player/player.tscn" id="3_rswlm"]
 [ext_resource type="Script" path="res://World/path.gd" id="3_tipha"]
+[ext_resource type="PackedScene" uid="uid://rk1xhtbxj8td" path="res://World/enemy.tscn" id="4_jr0hw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c7f8r"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -209,24 +211,6 @@ transform = Transform3D(2.76015, 0, 0, 0, 6.22422, 0.390867, 0, -8.1749, 0.2976,
 mesh = SubResource("BoxMesh_j1aus")
 skeleton = NodePath("../../..")
 
-[node name="Obstacles" type="Node3D" parent="Map"]
-metadata/_edit_lock_ = true
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Map/Obstacles"]
-transform = Transform3D(2.69009, 0, 0, 0, 1.03594, 0, 0, 0, 0.491267, -2.6973, 0.323329, -3.8475)
-mesh = SubResource("BoxMesh_j1aus")
-skeleton = NodePath("../../..")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Map/Obstacles"]
-transform = Transform3D(2.69009, 0, 0, 0, 1.31782, 0, 0, 0, 0.491267, -0.67438, 0.505275, -10.4792)
-mesh = SubResource("BoxMesh_j1aus")
-skeleton = NodePath("../../..")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Map/Obstacles"]
-transform = Transform3D(-8.28347e-08, 0, -0.491267, 0, 1.36475, 0, 1.89504, 0, -2.1474e-08, -1.10106, 5.87446, -10.9359)
-mesh = SubResource("BoxMesh_j1aus")
-skeleton = NodePath("../../..")
-
 [node name="Lights" type="Node3D" parent="Map"]
 metadata/_edit_lock_ = true
 
@@ -278,6 +262,40 @@ light_bake_mode = 1
 shadow_enabled = true
 omni_range = 9.163
 
+[node name="Obstacles" type="Node3D" parent="Map"]
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Map/Obstacles"]
+transform = Transform3D(2.69009, 0, 0, 0, 1.03594, 0, 0, 0, 0.491267, -2.6973, 0.323329, -6.88058)
+mesh = SubResource("BoxMesh_j1aus")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Map/Obstacles"]
+transform = Transform3D(2.60192, 0, -0.124746, 0, 1.03594, 0, 0.683086, 0, 0.475165, 2.15834, 0.323329, -3.29811)
+mesh = SubResource("BoxMesh_j1aus")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Map/Obstacles"]
+transform = Transform3D(6.49464, 0, 0, 0, 1.31782, 0, 0, 0, 0.491267, -0.67438, 0.505275, -12.4532)
+mesh = SubResource("BoxMesh_j1aus")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Map/Obstacles"]
+transform = Transform3D(-2.85514e-07, 0, -0.491267, 0, 1.31782, 0, 6.5318, 0, -2.1474e-08, 2.84527, 0.505275, -15.701)
+mesh = SubResource("BoxMesh_j1aus")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Map/Obstacles"]
+transform = Transform3D(-8.28347e-08, 0, -0.491267, 0, 1.36475, 0, 1.89504, 0, -2.1474e-08, -1.10106, 5.87446, -10.9359)
+mesh = SubResource("BoxMesh_j1aus")
+skeleton = NodePath("../../..")
+
+[node name="Interactables" type="Node3D" parent="Map"]
+metadata/_edit_lock_ = true
+
+[node name="Box" parent="Map/Interactables" instance=ExtResource("2_8gf2c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0116777, 3.14744, -14.5138)
+
 [node name="Path" type="Node3D" parent="Map"]
 script = ExtResource("3_tipha")
 metadata/_edit_lock_ = true
@@ -293,16 +311,22 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28289, 0.441115)
 
 [node name="Node3D2" type="Node3D" parent="Map/Path/out"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05649, 1.28289, -3.07984)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29515, 1.28289, -2.61121)
+
+[node name="Node3D3" type="Node3D" parent="Map/Path/out"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05649, 1.28289, -6.11292)
 
 [node name="hide" type="Node3D" parent="Map/Path"]
 metadata/_edit_lock_ = true
 
 [node name="Node3D" type="Node3D" parent="Map/Path/hide"]
-transform = Transform3D(0.12722, 0, -0.991874, 0, 1, 0, 0.991874, 0, 0.12722, -1.70645, 1.13344, 1.29841)
+transform = Transform3D(-0.0942476, 0, -0.995548, 0, 1, 0, 0.995548, 0, -0.0942476, -2.18428, 1.13344, 1.01845)
 
 [node name="Node3D2" type="Node3D" parent="Map/Path/hide"]
-transform = Transform3D(0.12722, 0, -0.991874, 0, 1, 0, 0.991874, 0, 0.12722, -2.26215, 0.602624, -3.03407)
+transform = Transform3D(-0.12722, 0, 0.991874, 0, 1, 0, -0.991874, 0, -0.12722, 1.63055, 0.602624, -2.86228)
+
+[node name="Node3D3" type="Node3D" parent="Map/Path/hide"]
+transform = Transform3D(0.12722, 0, -0.991874, 0, 1, 0, 0.991874, 0, 0.12722, -2.26215, 0.602624, -6.06715)
 
 [node name="PlayerCamera" parent="Map/Path" instance=ExtResource("3_065y4")]
 transform = Transform3D(0.12722, 0, -0.991874, 0, 1, 0, 0.991874, 0, 0.12722, -2.26215, 0.602624, -3.03407)
@@ -311,6 +335,15 @@ doppler_tracking = 2
 [node name="Enemies" type="Node3D" parent="Map"]
 unique_name_in_owner = true
 metadata/_edit_lock_ = true
+
+[node name="Enemy" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.965, 0.85, -7.92883)
+
+[node name="Enemy3" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.31278, 0.85, -5.26531)
+
+[node name="Enemy2" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.398433, 0.85, -14.543)
 
 [node name="Player" parent="." instance=ExtResource("3_rswlm")]
 unique_name_in_owner = true

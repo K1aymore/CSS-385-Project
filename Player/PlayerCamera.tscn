@@ -7,5 +7,6 @@ size = 0.085
 frustum_offset = Vector2(-0.39, 0)
 
 [node name="Gun" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_hnl6c")]
+process_mode = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.284, -0.181885, -0.332659)
 camera = NodePath("..")

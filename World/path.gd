@@ -7,7 +7,7 @@ extends Node3D
 @onready var hidePoints := $hide
 
 
-var speed := 8
+var speed := 7
 
 var dest : Node3D
 var pointNum := 0
@@ -15,7 +15,7 @@ var pointNum := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	camera.transform
+	camera.transform = getCurPoint().transform
 
 
 

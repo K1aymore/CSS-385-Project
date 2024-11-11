@@ -13,8 +13,7 @@ size = Vector3(0.5, 1.7, 0.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jq3j"]
 size = Vector3(0.5, 1.7, 0.5)
 
-[node name="Enemy" type="RigidBody3D"]
-mass = 75.297
+[node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1_qege6")
 metadata/_edit_group_ = true
 
@@ -27,4 +26,5 @@ shape = SubResource("BoxShape3D_7jq3j")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+billboard = 2
 texture = ExtResource("2_w6d18")

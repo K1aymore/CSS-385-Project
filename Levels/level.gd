@@ -23,6 +23,7 @@ func load():
 	
 	# delete starting enemies
 	for enemy in Enemies.get_children():
+		print("deleting ", enemy)
 		enemy.queue_free()
 	
 	
