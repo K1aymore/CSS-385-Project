@@ -10,6 +10,9 @@ var faith := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$PauseMenu.hide()
+	$EndScreen.hide()
+	
 	level = get_parent().get_child(1)
 
 
@@ -28,3 +31,13 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton && event.is_pressed():
 		shots -= 1
+
+
+func _on_path_end() -> void:
+	get_tree().paused = true
+	$EndScreen.show()
+	%NoterietyEndLabel.text = "Noteriety: " + str(faith)
+
+
+func _on_end_quit_button_pressed() -> void:
+	get_tree().quit()

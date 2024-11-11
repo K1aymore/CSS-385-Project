@@ -12,6 +12,7 @@ var speed := 7
 var dest : Node3D
 var pointNum := 0
 
+signal end
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,7 +27,9 @@ func _process(delta: float) -> void:
 	
 	
 	camera.position = lerp(camera.position, dest.position, speed * delta)
-	camera.rotation = lerp(camera.rotation, dest.rotation, speed * delta)
+	camera.rotation.x = lerp_angle(camera.rotation.x, dest.rotation.x, speed * delta)
+	camera.rotation.y = lerp_angle(camera.rotation.y, dest.rotation.y, speed * delta)
+	camera.rotation.z = lerp_angle(camera.rotation.z, dest.rotation.z, speed * delta)
 	
 	if camera.position.distance_to(getCurPoint(true).position) < 0.1:
 		Player.shots += delta * 4.5
@@ -48,3 +51,6 @@ func getCurPoint(hide = null) -> Node3D:
 
 func _on_timer_timeout() -> void:
 	pointNum += 1
+	if pointNum >= hidePoints.get_child_count():
+		end.emit()
+		pointNum = hidePoints.get_child_count() - 1

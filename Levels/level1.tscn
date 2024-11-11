@@ -37,7 +37,7 @@ material = SubResource("StandardMaterial3D_5vp5g")
 
 [sub_resource type="Animation" id="Animation_35rbd"]
 resource_name = "enemies"
-length = 20.0
+length = 50.0
 step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -46,7 +46,7 @@ tracks/0/path = NodePath("Map/Enemies/Enemy4:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(10, 12),
+"times": PackedFloat32Array(7, 9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-10.0557, 0.85, -14.543), Vector3(-1.39324, 0.85, -14.543)]
@@ -70,10 +70,82 @@ tracks/2/path = NodePath("Map/Enemies/Enemy6:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(10, 12),
+"times": PackedFloat32Array(22.25, 24.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(10.7592, 0.85, -14.543), Vector3(-2.07788, 0.85, -8.01522)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Map/Enemies/Enemy7:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(24.25, 26.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(9.57764, 0.85, -12.5441), Vector3(-1.03795, 0.85, -7.78701)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Map/Enemies/Enemy8:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(19, 21),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-11.2302, 0.85, -15.4184), Vector3(-2.5838, 0.85, -14.2193)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Map/Enemies/Enemy9:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(12, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-7.85035, 6.28622, -16.7421), Vector3(-7.00929, 0.87438, -8.08734)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Map/Enemies/Enemy10:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(30, 32),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.456903, 6.29802, -14.4304), Vector3(-4.966, 6.265, -16.008)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Map/Enemies/Enemy15:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(40, 42),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(7.37041, 6.33002, -8.59417), Vector3(0.169664, 6.33002, -11.4605)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Map/Enemies/Enemy11:position")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(34, 36),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-7.0189, 6.265, -9.268), Vector3(-5.11752, 6.265, -9.268)]
 }
 
 [sub_resource type="Animation" id="Animation_ak1n6"]
@@ -113,6 +185,78 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(10.7592, 0.85, -14.543)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Map/Enemies/Enemy7:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(9.57764, 0.85, -12.5441)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Map/Enemies/Enemy8:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-11.2302, 0.85, -15.4184)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Map/Enemies/Enemy9:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-11.2302, 0.85, -15.4184)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Map/Enemies/Enemy10:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.456903, 6.29802, -14.4304)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Map/Enemies/Enemy15:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(7.37041, 6.33002, -8.59417)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Map/Enemies/Enemy11:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-6.8921, 6.265, -9.268)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6o55s"]
@@ -295,7 +439,7 @@ skeleton = NodePath("../../..")
 metadata/_edit_lock_ = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Map/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.32825, 1.12351, -11.2987)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.32825, 2.96456, -11.2987)
 light_color = Color(0.815735, 0.557818, 0.467316, 1)
 light_energy = 11.37
 light_bake_mode = 1
@@ -391,10 +535,16 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28289, 0.441115)
 
 [node name="Node3D2" type="Node3D" parent="Map/Path/out"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29515, 1.28289, -2.61121)
+transform = Transform3D(0.987661, 0, 0.156607, 0, 1, 0, -0.156607, 0, 0.987661, 1.29515, 1.28289, -2.61121)
 
 [node name="Node3D3" type="Node3D" parent="Map/Path/out"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05649, 1.28289, -6.11292)
+
+[node name="Node3D4" type="Node3D" parent="Map/Path/out"]
+transform = Transform3D(-0.93358, 0, -0.358368, 0, 1, 0, 0.358368, 0, -0.93358, -5.445, 6.355, -17.118)
+
+[node name="Node3D5" type="Node3D" parent="Map/Path/out"]
+transform = Transform3D(-0.594823, 0, -0.803857, 0, 1, 0, 0.803857, 0, -0.594823, -4.566, 6.76, -12.673)
 
 [node name="hide" type="Node3D" parent="Map/Path"]
 metadata/_edit_lock_ = true
@@ -408,8 +558,14 @@ transform = Transform3D(-0.12722, 0, 0.991874, 0, 1, 0, -0.991874, 0, -0.12722, 
 [node name="Node3D3" type="Node3D" parent="Map/Path/hide"]
 transform = Transform3D(0.12722, 0, -0.991874, 0, 1, 0, 0.991874, 0, 0.12722, -2.26215, 0.602624, -6.06715)
 
+[node name="Node3D4" type="Node3D" parent="Map/Path/hide"]
+transform = Transform3D(-0.0348994, 0, -0.99939, 0, 1, 0, 0.99939, 0, -0.0348994, -6.965, 6.35, -16.941)
+
+[node name="Node3D5" type="Node3D" parent="Map/Path/hide"]
+transform = Transform3D(-0.998134, 0, 0.0610485, 0, 1, 0, -0.0610485, 0, -0.998134, -4.037, 6.225, -13.844)
+
 [node name="PlayerCamera" parent="Map/Path" instance=ExtResource("3_065y4")]
-transform = Transform3D(0.12722, 0, -0.991874, 0, 1, 0, 0.991874, 0, 0.12722, -2.26215, 0.602624, -3.03407)
+transform = Transform3D(-0.93358, 0, -0.358368, 0, 1, 0, 0.358368, 0, -0.93358, -5.445, 6.355, -17.118)
 doppler_tracking = 2
 
 [node name="Enemies" type="Node3D" parent="Map"]
@@ -420,7 +576,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.965, 0.85, -7.92883)
 
 [node name="Enemy3" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.31278, 0.85, -5.26531)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56001, 0.85, -4.24988)
 
 [node name="Enemy2" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.398433, 0.85, -14.543)
@@ -434,6 +590,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.64152, 0.85, -7.84236)
 [node name="Enemy6" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7592, 0.85, -14.543)
 
+[node name="Enemy7" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.57764, 0.85, -12.5441)
+
+[node name="Enemy8" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2302, 0.85, -15.4184)
+
+[node name="Enemy9" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2302, 0.85, -15.4184)
+
+[node name="Enemy10" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456903, 6.29802, -14.4304)
+
+[node name="Enemy11" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8921, 6.265, -9.268)
+
+[node name="Enemy12" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02889, 6.265, -7.54242)
+
+[node name="Enemy13" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.07856, 6.33002, -7.86152)
+
+[node name="Enemy14" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.07856, 6.33002, -11.7174)
+
+[node name="Enemy15" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.37041, 6.33002, -8.59417)
+
+[node name="Enemy16" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103808, 6.33002, -9.98472)
+
 [node name="Player" parent="." instance=ExtResource("3_rswlm")]
 unique_name_in_owner = true
 
@@ -441,5 +627,7 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_6o55s")
 }
+autoplay = "enemies"
 
+[connection signal="end" from="Map/Path" to="Player" method="_on_path_end"]
 [connection signal="timeout" from="Map/Path/Timer" to="Map/Path" method="_on_timer_timeout"]
