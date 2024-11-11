@@ -18,6 +18,7 @@ func _ready() -> void:
 	camera.transform
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
@@ -29,7 +30,7 @@ func _process(delta: float) -> void:
 	
 	if camera.position.distance_to(getCurPoint(true).position) < 0.1:
 		Player.shots += delta * 4.5
-	
+
 
 
 
@@ -42,3 +43,8 @@ func getCurPoint(hide = null) -> Node3D:
 		return outPoints.get_child(pointNum)
 	else:
 		return hidePoints.get_child(pointNum)
+
+
+
+func _on_timer_timeout() -> void:
+	pointNum += 1

@@ -213,7 +213,7 @@ skeleton = NodePath("../../..")
 metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Map/Obstacles"]
-transform = Transform3D(2.69009, 0, 0, 0, 1.03594, 0, 0, 0, 0.491267, -2.6973, 0.458396, -3.8475)
+transform = Transform3D(2.69009, 0, 0, 0, 1.03594, 0, 0, 0, 0.491267, -2.6973, 0.323329, -3.8475)
 mesh = SubResource("BoxMesh_j1aus")
 skeleton = NodePath("../../..")
 
@@ -282,9 +282,9 @@ omni_range = 9.163
 script = ExtResource("3_tipha")
 metadata/_edit_lock_ = true
 
-[node name="PlayerCamera" parent="Map/Path" instance=ExtResource("3_065y4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28289, 0.441115)
-doppler_tracking = 2
+[node name="Timer" type="Timer" parent="Map/Path"]
+wait_time = 10.0
+autostart = true
 
 [node name="out" type="Node3D" parent="Map/Path"]
 metadata/_edit_lock_ = true
@@ -292,11 +292,21 @@ metadata/_edit_lock_ = true
 [node name="Node3D" type="Node3D" parent="Map/Path/out"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28289, 0.441115)
 
+[node name="Node3D2" type="Node3D" parent="Map/Path/out"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05649, 1.28289, -3.07984)
+
 [node name="hide" type="Node3D" parent="Map/Path"]
 metadata/_edit_lock_ = true
 
 [node name="Node3D" type="Node3D" parent="Map/Path/hide"]
 transform = Transform3D(0.12722, 0, -0.991874, 0, 1, 0, 0.991874, 0, 0.12722, -1.70645, 1.13344, 1.29841)
+
+[node name="Node3D2" type="Node3D" parent="Map/Path/hide"]
+transform = Transform3D(0.12722, 0, -0.991874, 0, 1, 0, 0.991874, 0, 0.12722, -2.26215, 0.602624, -3.03407)
+
+[node name="PlayerCamera" parent="Map/Path" instance=ExtResource("3_065y4")]
+transform = Transform3D(0.12722, 0, -0.991874, 0, 1, 0, 0.991874, 0, 0.12722, -2.26215, 0.602624, -3.03407)
+doppler_tracking = 2
 
 [node name="Enemies" type="Node3D" parent="Map"]
 unique_name_in_owner = true
@@ -304,3 +314,5 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("3_rswlm")]
 unique_name_in_owner = true
+
+[connection signal="timeout" from="Map/Path/Timer" to="Map/Path" method="_on_timer_timeout"]
