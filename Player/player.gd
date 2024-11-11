@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	
 	shots = clamp(shots, -1, 6)
 	$Shots.value = shots
-	$FaithLabel.text = str("Noteriety: ", faith)
+	$FaithLabel.text = str("Notoriety: ", faith)
 	
 
 
@@ -36,7 +36,7 @@ func _input(event: InputEvent) -> void:
 func _on_path_end() -> void:
 	get_tree().paused = true
 	$EndScreen.show()
-	%NoterietyEndLabel.text = "Noteriety: " + str(faith)
+	%NotorietyEndLabel.text = "Notoriety: " + str(faith)
 
 
 func _on_end_quit_button_pressed() -> void:
