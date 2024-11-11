@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @onready var Player := %Player
 var alive := true
-var health := 2
+var health := 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,11 +18,11 @@ func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, 
 	if event is InputEventMouseButton && event.is_pressed() && Player.shots >= 0:
 		health -= 1
 		if health <= 0:
-			die(1)
+			die(-10)
 
 
 func hitByBox():
-	die(10)
+	die(-10)
 
 
 func die(faith):

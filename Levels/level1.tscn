@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://n578pcdueo52"]
+[gd_scene load_steps=18 format=3 uid="uid://n578pcdueo52"]
 
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_csyl2"]
 [ext_resource type="PackedScene" uid="uid://dfmyd4iu3e46y" path="res://World/box.tscn" id="2_8gf2c"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmwmpe87t8ufl" path="res://Player/player.tscn" id="3_rswlm"]
 [ext_resource type="Script" path="res://World/path.gd" id="3_tipha"]
 [ext_resource type="PackedScene" uid="uid://rk1xhtbxj8td" path="res://World/enemy.tscn" id="4_jr0hw"]
+[ext_resource type="PackedScene" uid="uid://1pps4xxprynm" path="res://World/civilian.tscn" id="6_tgc3u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c7f8r"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -147,6 +148,30 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector3(-7.0189, 6.265, -9.268), Vector3(-5.11752, 6.265, -9.268)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Map/Civilians/Civilian2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(14, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-10.5064, 0.845939, -14.6888), Vector3(-2.75931, 0.845939, -14.6888)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Map/Civilians/Civilian3:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(32, 34),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-7.52342, 6.29757, -3.08811), Vector3(-4.02318, 6.29757, -3.08811)]
+}
 
 [sub_resource type="Animation" id="Animation_ak1n6"]
 length = 0.001
@@ -257,6 +282,30 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-6.8921, 6.265, -9.268)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Map/Civilians/Civilian2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-10.5064, 0.845939, -14.6888)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Map/Civilians/Civilian3:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-7.52342, 6.29757, -3.08811)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6o55s"]
@@ -439,7 +488,7 @@ skeleton = NodePath("../../..")
 metadata/_edit_lock_ = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Map/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.32825, 2.96456, -11.2987)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.32825, 2.96456, -10.2122)
 light_color = Color(0.815735, 0.557818, 0.467316, 1)
 light_energy = 11.37
 light_bake_mode = 1
@@ -619,6 +668,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.37041, 6.33002, -8.59417)
 
 [node name="Enemy16" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103808, 6.33002, -9.98472)
+
+[node name="Civilians" type="Node3D" parent="Map"]
+metadata/_edit_lock_ = true
+
+[node name="Civilian" parent="Map/Civilians" instance=ExtResource("6_tgc3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.06558, 0.845939, -9.18662)
+
+[node name="Civilian2" parent="Map/Civilians" instance=ExtResource("6_tgc3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5064, 0.845939, -14.6888)
+
+[node name="Civilian3" parent="Map/Civilians" instance=ExtResource("6_tgc3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52342, 6.29757, -3.08811)
 
 [node name="Player" parent="." instance=ExtResource("3_rswlm")]
 unique_name_in_owner = true

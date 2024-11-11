@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://1pps4xxprynm"]
+
+[ext_resource type="Script" path="res://World/civilian.gd" id="1_f00y5"]
+[ext_resource type="Texture2D" uid="uid://c8msxkt0he73q" path="res://zombie.png" id="2_efqwh"]
+[ext_resource type="Texture2D" uid="uid://bfhtukxhlcaqy" path="res://World/civilian.png" id="3_ivsy1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ule1q"]
+albedo_texture = ExtResource("2_efqwh")
+
+[sub_resource type="BoxMesh" id="BoxMesh_t3re1"]
+material = SubResource("StandardMaterial3D_ule1q")
+size = Vector3(0.5, 1.7, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7jq3j"]
+size = Vector3(0.5, 1.7, 0.5)
+
+[node name="Civilian" type="CharacterBody3D"]
+script = ExtResource("1_f00y5")
+metadata/_edit_group_ = true
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_t3re1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7jq3j")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+billboard = 2
+shaded = true
+texture = ExtResource("3_ivsy1")
