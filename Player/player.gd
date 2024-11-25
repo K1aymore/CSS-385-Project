@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton && event.is_pressed():
+	if event is InputEventMouseButton && event.is_pressed() && visible:
 		if shots > 0:
 			$AudioStreamPlayer.play()
 		

@@ -6,7 +6,8 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	$CinematicsCam.current = true
+	$Player.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -92,3 +93,10 @@ func save():
 	
 	
 	saveFile.close()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "intro_vid":
+		$Player.visible = true
+		%PlayerCamera.current = true
+		$AnimationPlayer.play("enemies")
