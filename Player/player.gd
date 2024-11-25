@@ -40,6 +40,7 @@ func _on_path_end() -> void:
 	get_tree().paused = true
 	$EndScreen.show()
 	%NotorietyEndLabel.text = "Notoriety: " + str(faith)
+	$EndMusic.play()
 
 
 func _on_end_quit_button_pressed() -> void:

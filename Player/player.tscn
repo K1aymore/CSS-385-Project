@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dmwmpe87t8ufl"]
+[gd_scene load_steps=16 format=3 uid="uid://dmwmpe87t8ufl"]
 
 [ext_resource type="Theme" uid="uid://d28ig3cmjbwey" path="res://new_theme.tres" id="1_cyfge"]
 [ext_resource type="Script" path="res://Player/player.gd" id="2_gj3l2"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Player/pause_menu.gd" id="7_7k6nm"]
 [ext_resource type="Script" path="res://Player/mouse.gd" id="8_brhoe"]
 [ext_resource type="AudioStream" uid="uid://b21qvo7ipcifj" path="res://Player/gunshot1.wav" id="9_ut0rh"]
+[ext_resource type="AudioStream" uid="uid://doxlo81lkuiy5" path="res://Smash Mouth (Chiptune Remix).ogg" id="10_2iofh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsfdf"]
 bg_color = Color(0.311572, 0.700501, 0.28737, 1)
@@ -262,6 +263,10 @@ script = ExtResource("8_brhoe")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_ut0rh")
 max_polyphony = 6
+
+[node name="EndMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_2iofh")
+volume_db = -5.43
 
 [connection signal="pressed" from="PauseMenu/VBoxContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/SaveButton" to="PauseMenu" method="_on_save_button_pressed"]

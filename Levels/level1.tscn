@@ -85,7 +85,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-11.2302, 0.85, -15.4184)]
+"values": [Vector3(-9.65171, 0.85, -15.4184)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -97,7 +97,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-11.2302, 0.85, -15.4184)]
+"values": [Vector3(-9.61167, 0.85, -15.4184)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -145,7 +145,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-10.0557, 0.85, -14.543)]
+"values": [Vector3(-9.62406, 0.85, -14.543)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -169,7 +169,7 @@ tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-10.5064, 0.845939, -14.6888)]
+"values": [Vector3(-9.35774, 0.845939, -14.6888)]
 }
 tracks/11/type = "bezier"
 tracks/11/imported = false
@@ -831,7 +831,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56001, 0.85, -4.24988)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.398433, 0.85, -14.543)
 
 [node name="Enemy4" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0557, 0.85, -14.543)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.62406, 0.85, -14.543)
 
 [node name="Enemy5" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.64152, 0.85, -7.84236)
@@ -843,10 +843,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7592, 0.85, -14.543)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.57764, 0.85, -12.5441)
 
 [node name="Enemy8" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2302, 0.85, -15.4184)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.61167, 0.85, -15.4184)
 
 [node name="Enemy9" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2302, 0.85, -15.4184)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.65171, 0.85, -15.4184)
 
 [node name="Enemy10" parent="Map/Enemies" instance=ExtResource("4_jr0hw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456903, 6.29802, -14.4304)
@@ -876,7 +876,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.06558, 0.845939, -9.18662)
 
 [node name="Civilian2" parent="Map/Civilians" instance=ExtResource("6_tgc3u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5064, 0.845939, -14.6888)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.35774, 0.845939, -14.6888)
 
 [node name="Civilian3" parent="Map/Civilians" instance=ExtResource("6_tgc3u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.52342, 6.29757, -3.08811)

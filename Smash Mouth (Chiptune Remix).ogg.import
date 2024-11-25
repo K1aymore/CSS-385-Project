@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://doxlo81lkuiy5"
+path="res://.godot/imported/Smash Mouth (Chiptune Remix).ogg-589db38435177eeb3f828d6eefc01a7a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Smash Mouth (Chiptune Remix).ogg"
+dest_files=["res://.godot/imported/Smash Mouth (Chiptune Remix).ogg-589db38435177eeb3f828d6eefc01a7a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
