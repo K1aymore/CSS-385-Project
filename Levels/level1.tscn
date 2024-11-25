@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://n578pcdueo52"]
+[gd_scene load_steps=20 format=3 uid="uid://n578pcdueo52"]
 
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_csyl2"]
 [ext_resource type="PackedScene" uid="uid://dfmyd4iu3e46y" path="res://World/box.tscn" id="2_8gf2c"]
@@ -7,11 +7,13 @@
 [ext_resource type="Script" path="res://World/path.gd" id="3_tipha"]
 [ext_resource type="PackedScene" uid="uid://rk1xhtbxj8td" path="res://World/enemy.tscn" id="4_jr0hw"]
 [ext_resource type="PackedScene" uid="uid://1pps4xxprynm" path="res://World/civilian.tscn" id="6_tgc3u"]
+[ext_resource type="AudioStream" uid="uid://cy6ypyr6tvjli" path="res://How Bad Can I Be But It's A Chiptune Remake.ogg" id="8_lpjir"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c7f8r"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-use_debanding = false
+sky_top_color = Color(0, 0.075, 0.18, 1)
+sky_horizon_color = Color(0.54, 0.2268, 0.23202, 1)
+ground_horizon_color = Color(0.57, 0.228, 0.2337, 1)
+ground_curve = 0.0292817
 
 [sub_resource type="Sky" id="Sky_npoud"]
 sky_material = SubResource("ProceduralSkyMaterial_c7f8r")
@@ -19,7 +21,6 @@ sky_material = SubResource("ProceduralSkyMaterial_c7f8r")
 [sub_resource type="Environment" id="Environment_g3taa"]
 background_mode = 2
 sky = SubResource("Sky_npoud")
-ambient_light_color = Color(1, 1, 1, 1)
 tonemap_exposure = 1.5
 glow_enabled = true
 
@@ -31,197 +32,60 @@ material = SubResource("StandardMaterial3D_5vp5g")
 
 [sub_resource type="BoxMesh" id="BoxMesh_p6qrr"]
 material = SubResource("StandardMaterial3D_5vp5g")
-size = Vector3(100, 0.95, 100)
+size = Vector3(10000, 0.95, 10000)
 
 [sub_resource type="BoxMesh" id="BoxMesh_aujah"]
 material = SubResource("StandardMaterial3D_5vp5g")
-
-[sub_resource type="Animation" id="Animation_35rbd"]
-resource_name = "enemies"
-length = 50.0
-step = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Map/Enemies/Enemy4:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(7, 9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-10.0557, 0.85, -14.543), Vector3(-1.39324, 0.85, -14.543)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Map/Enemies/Enemy5:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(10, 12),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-9.64152, 0.85, -7.84236), Vector3(-3.82068, 0.85, -7.84236)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Map/Enemies/Enemy6:position")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(22.25, 24.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(10.7592, 0.85, -14.543), Vector3(-2.07788, 0.85, -8.01522)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Map/Enemies/Enemy7:position")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(24.25, 26.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(9.57764, 0.85, -12.5441), Vector3(-1.03795, 0.85, -7.78701)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Map/Enemies/Enemy8:position")
-tracks/4/interp = 2
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(19, 21),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-11.2302, 0.85, -15.4184), Vector3(-2.5838, 0.85, -14.2193)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Map/Enemies/Enemy9:position")
-tracks/5/interp = 2
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(12, 14),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-7.85035, 6.28622, -16.7421), Vector3(-7.00929, 0.87438, -8.08734)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Map/Enemies/Enemy10:position")
-tracks/6/interp = 2
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(30, 32),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.456903, 6.29802, -14.4304), Vector3(-4.966, 6.265, -16.008)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Map/Enemies/Enemy15:position")
-tracks/7/interp = 2
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(40, 42),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(7.37041, 6.33002, -8.59417), Vector3(0.169664, 6.33002, -11.4605)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Map/Enemies/Enemy11:position")
-tracks/8/interp = 2
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(34, 36),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-7.0189, 6.265, -9.268), Vector3(-5.11752, 6.265, -9.268)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Map/Civilians/Civilian2:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(14, 16),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-10.5064, 0.845939, -14.6888), Vector3(-2.75931, 0.845939, -14.6888)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Map/Civilians/Civilian3:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(32, 34),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-7.52342, 6.29757, -3.08811), Vector3(-4.02318, 6.29757, -3.08811)]
-}
 
 [sub_resource type="Animation" id="Animation_ak1n6"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Map/Enemies/Enemy4:position")
+tracks/0/path = NodePath("Map/Enemies/Enemy11:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-10.0557, 0.85, -14.543)]
+"values": [Vector3(-6.8921, 6.265, -9.268)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Map/Enemies/Enemy5:position")
+tracks/1/path = NodePath("Map/Enemies/Enemy15:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-9.64152, 0.85, -7.84236)]
+"values": [Vector3(7.37041, 6.33002, -8.59417)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Map/Enemies/Enemy6:position")
+tracks/2/path = NodePath("Map/Enemies/Enemy10:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(10.7592, 0.85, -14.543)]
+"values": [Vector3(0.456903, 6.29802, -14.4304)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Map/Enemies/Enemy7:position")
+tracks/3/path = NodePath("Map/Enemies/Enemy9:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(9.57764, 0.85, -12.5441)]
+"values": [Vector3(-11.2302, 0.85, -15.4184)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -238,80 +102,401 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Map/Enemies/Enemy9:position")
+tracks/5/path = NodePath("Map/Enemies/Enemy7:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-11.2302, 0.85, -15.4184)]
+"values": [Vector3(9.57764, 0.85, -12.5441)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Map/Enemies/Enemy10:position")
+tracks/6/path = NodePath("Map/Enemies/Enemy6:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.456903, 6.29802, -14.4304)]
+"values": [Vector3(10.7592, 0.85, -14.543)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Map/Enemies/Enemy15:position")
+tracks/7/path = NodePath("Map/Enemies/Enemy5:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(7.37041, 6.33002, -8.59417)]
+"values": [Vector3(-9.64152, 0.85, -7.84236)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Map/Enemies/Enemy11:position")
+tracks/8/path = NodePath("Map/Enemies/Enemy4:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-6.8921, 6.265, -9.268)]
+"values": [Vector3(-10.0557, 0.85, -14.543)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Map/Civilians/Civilian2:position")
+tracks/9/path = NodePath("Map/Civilians/Civilian3:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-10.5064, 0.845939, -14.6888)]
+"values": [Vector3(-7.52342, 6.29757, -3.08811)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Map/Civilians/Civilian3:position")
+tracks/10/path = NodePath("Map/Civilians/Civilian2:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-7.52342, 6.29757, -3.08811)]
+"values": [Vector3(-10.5064, 0.845939, -14.6888)]
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CinematicsCam:rotation:x")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.15708, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CinematicsCam:rotation:y")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.24791, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CinematicsCam:rotation:z")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CinematicsCam:fov")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(59, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("CinematicsCam:position:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-364.75, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("CinematicsCam:position:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(12.655, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/17/type = "bezier"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("CinematicsCam:position:z")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(198.615, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Music:playing")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_35rbd"]
+resource_name = "enemies"
+length = 50.0
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Map/Enemies/Enemy11:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(34, 36),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-7.0189, 6.265, -9.268), Vector3(-5.11752, 6.265, -9.268)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Map/Enemies/Enemy15:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(40, 42),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(7.37041, 6.33002, -8.59417), Vector3(0.169664, 6.33002, -11.4605)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Map/Enemies/Enemy10:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(30, 32),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.456903, 6.29802, -14.4304), Vector3(-4.966, 6.265, -16.008)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Map/Enemies/Enemy9:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(12, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-7.85035, 6.28622, -16.7421), Vector3(-7.00929, 0.87438, -8.08734)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Map/Enemies/Enemy8:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(19, 21),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-11.2302, 0.85, -15.4184), Vector3(-2.5838, 0.85, -14.2193)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Map/Enemies/Enemy7:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(24.25, 26.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(9.57764, 0.85, -12.5441), Vector3(-1.03795, 0.85, -7.78701)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Map/Enemies/Enemy6:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(22.25, 24.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(10.7592, 0.85, -14.543), Vector3(-2.07788, 0.85, -8.01522)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Map/Enemies/Enemy5:position")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(10, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-9.64152, 0.85, -7.84236), Vector3(-3.82068, 0.85, -7.84236)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Map/Enemies/Enemy4:position")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(7, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-10.0557, 0.85, -14.543), Vector3(-1.39324, 0.85, -14.543)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Map/Civilians/Civilian3:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(32, 34),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-7.52342, 6.29757, -3.08811), Vector3(-4.02318, 6.29757, -3.08811)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Map/Civilians/Civilian2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(14, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-10.5064, 0.845939, -14.6888), Vector3(-2.75931, 0.845939, -14.6888)]
+}
+
+[sub_resource type="Animation" id="Animation_lis1g"]
+resource_name = "intro_vid"
+length = 16.0
+step = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CinematicsCam:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.488692, -0.25, 0, 0.25, 0, 0, -0.25, -0.475, 0.25, 0),
+"times": PackedFloat32Array(0, 16)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CinematicsCam:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1.31772, -0.25, 0, 0.25, 0, -1.4748, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 16)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CinematicsCam:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 16)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CinematicsCam:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(59, -0.25, 0, 0.25, 0, 75, -1.1837, -19.5, 0.25, 0),
+"times": PackedFloat32Array(0, 16)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CinematicsCam:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-364.75, -0.25, 0, 0.25, 0, -1.865, -0.562338, -32.635, 0.25, 0),
+"times": PackedFloat32Array(0, 16)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CinematicsCam:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(90.65, -0.25, 0, 0.25, 0, 1.08, -0.70805, 85.42, 0.25, 0),
+"times": PackedFloat32Array(0, 16)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CinematicsCam:position:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(198.615, -0.25, 0, 0.25, 0, 1.11, -0.879105, 29.39, 0.25, 0),
+"times": PackedFloat32Array(0, 16)
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Music:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6o55s"]
 _data = {
 "RESET": SubResource("Animation_ak1n6"),
-"enemies": SubResource("Animation_35rbd")
+"enemies": SubResource("Animation_35rbd"),
+"intro_vid": SubResource("Animation_lis1g")
 }
 
 [node name="Level1" type="Node3D"]
@@ -323,6 +508,7 @@ environment = SubResource("Environment_g3taa")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_energy = 0.155
 shadow_enabled = true
 
 [node name="Map" type="Node3D" parent="."]
@@ -465,7 +651,7 @@ mesh = SubResource("BoxMesh_aujah")
 skeleton = NodePath("")
 
 [node name="Floor2" type="MeshInstance3D" parent="Map/Walls"]
-transform = Transform3D(19.6398, 0, 0, 0, 1, 0, 0, 0, 23.0884, 2.90195, 4.89831, -9.23798)
+transform = Transform3D(19.6398, 0, 0, 0, 1, 0, 0, 0, 23.0884, 2.90195, 4.89831, -11.1946)
 mesh = SubResource("BoxMesh_aujah")
 skeleton = NodePath("")
 
@@ -688,7 +874,15 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_6o55s")
 }
-autoplay = "enemies"
+autoplay = "intro_vid"
+
+[node name="CinematicsCam" type="Camera3D" parent="."]
+transform = Transform3D(0.317305, 0.148351, -0.936648, 0, 0.987688, 0.156435, 0.948324, -0.0496375, 0.313398, -364.75, 12.655, 198.615)
+fov = 59.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_lpjir")
+parameters/looping = true
 
 [connection signal="end" from="Map/Path" to="Player" method="_on_path_end"]
 [connection signal="timeout" from="Map/Path/Timer" to="Map/Path" method="_on_timer_timeout"]
