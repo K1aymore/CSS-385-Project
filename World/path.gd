@@ -42,10 +42,10 @@ func getCurPoint(hide = null) -> Node3D:
 	if hide == true:
 		return hidePoints.get_child(pointNum)
 	
-	if Input.is_action_pressed("leanOut") || hide == false:
-		return outPoints.get_child(pointNum)
-	else:
+	if Input.is_action_pressed("leanOut") || hide == true:
 		return hidePoints.get_child(pointNum)
+	else:
+		return outPoints.get_child(pointNum)
 
 
 

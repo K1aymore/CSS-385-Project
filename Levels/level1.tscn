@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://n578pcdueo52"]
+[gd_scene load_steps=21 format=3 uid="uid://n578pcdueo52"]
 
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_csyl2"]
 [ext_resource type="PackedScene" uid="uid://dfmyd4iu3e46y" path="res://World/box.tscn" id="2_8gf2c"]
@@ -30,8 +30,11 @@ albedo_color = Color(0.16, 0.10792, 0.0112, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_j1aus"]
 material = SubResource("StandardMaterial3D_5vp5g")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xo8os"]
+albedo_color = Color(0.33, 0.27456, 0.0924, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_p6qrr"]
-material = SubResource("StandardMaterial3D_5vp5g")
+material = SubResource("StandardMaterial3D_xo8os")
 size = Vector3(10000, 0.95, 10000)
 
 [sub_resource type="BoxMesh" id="BoxMesh_aujah"]
@@ -522,7 +525,7 @@ environment = SubResource("Environment_g3taa")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-light_energy = 0.155
+light_energy = 0.3
 shadow_enabled = true
 
 [node name="Map" type="Node3D" parent="."]
