@@ -73,7 +73,7 @@ text = "- Hold space to hide behind cover
 - You have 6 shots in your revolver
 - You automatically reload when hiding behind cover
 - Shooting boxes above enemies will drop it on their heads, killing them and granting bonus noteriety
-- Avoid killing civilians, since that lowers your noteriety"
+- Avoid killing civilians, which lowers your noteriety"
 autowrap_mode = 3
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

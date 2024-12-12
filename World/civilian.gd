@@ -22,11 +22,11 @@ func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, 
 			$Sprite3D.modulate.g = 0.5
 			$Sprite3D.modulate.b = 0.5
 		if health <= 0:
-			die(-10)
+			die(-5)
 
 
 func hitByBox():
-	die(-10)
+	die(-5)
 
 
 func die(faith):

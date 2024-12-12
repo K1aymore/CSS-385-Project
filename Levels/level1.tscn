@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://n578pcdueo52"]
+[gd_scene load_steps=25 format=3 uid="uid://n578pcdueo52"]
 
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_csyl2"]
 [ext_resource type="PackedScene" uid="uid://dfmyd4iu3e46y" path="res://World/box.tscn" id="2_8gf2c"]
@@ -30,6 +30,10 @@ albedo_color = Color(0.16, 0.10792, 0.0112, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_j1aus"]
 material = SubResource("StandardMaterial3D_5vp5g")
 
+[sub_resource type="BoxMesh" id="BoxMesh_e2lx5"]
+material = SubResource("StandardMaterial3D_5vp5g")
+size = Vector3(1, 1, 1.485)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xo8os"]
 albedo_color = Color(0.33, 0.27456, 0.0924, 1)
 
@@ -39,6 +43,16 @@ size = Vector3(10000, 0.95, 10000)
 
 [sub_resource type="BoxMesh" id="BoxMesh_aujah"]
 material = SubResource("StandardMaterial3D_5vp5g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ylu7b"]
+albedo_color = Color(0.16, 0.10792, 0.0112, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_myiyt"]
+material = SubResource("StandardMaterial3D_ylu7b")
+size = Vector3(19.6, 1, 23)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ghqib"]
+size = Vector3(19.6, 1, 23)
 
 [sub_resource type="Animation" id="Animation_ak1n6"]
 length = 0.001
@@ -546,7 +560,7 @@ skeleton = NodePath("../../..")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="Map/Walls"]
 transform = Transform3D(-8.47422e-07, 0, 1, 0, 8.74865, 0, -19.3867, 0, -4.37114e-08, -9.68958, 4.18638, -9.76278)
-mesh = SubResource("BoxMesh_j1aus")
+mesh = SubResource("BoxMesh_e2lx5")
 skeleton = NodePath("../../..")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="Map/Walls"]
@@ -663,12 +677,7 @@ mesh = SubResource("BoxMesh_p6qrr")
 skeleton = NodePath("")
 
 [node name="Roof" type="MeshInstance3D" parent="Map/Walls"]
-transform = Transform3D(19.962, 0, 0, 0, 1, 0, 0, 0, 20.0558, 0, 8.49149, -9.23798)
-mesh = SubResource("BoxMesh_aujah")
-skeleton = NodePath("")
-
-[node name="Floor2" type="MeshInstance3D" parent="Map/Walls"]
-transform = Transform3D(19.6398, 0, 0, 0, 1, 0, 0, 0, 23.0884, 2.90195, 4.89831, -11.1946)
+transform = Transform3D(19.962, 0, 0, 0, 1, 0, 0, 0, 20.0558, 0, 8.64308, -9.23798)
 mesh = SubResource("BoxMesh_aujah")
 skeleton = NodePath("")
 
@@ -686,6 +695,16 @@ skeleton = NodePath("")
 transform = Transform3D(2.76015, 0, 0, 0, 6.22422, 0.390867, 0, -8.1749, 0.2976, -8.09344, 2.09076, -12.5485)
 mesh = SubResource("BoxMesh_j1aus")
 skeleton = NodePath("../../..")
+
+[node name="Floor2" type="StaticBody3D" parent="Map/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90195, 4.89831, -11.1946)
+
+[node name="Floor2" type="MeshInstance3D" parent="Map/Walls/Floor2"]
+mesh = SubResource("BoxMesh_myiyt")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Walls/Floor2"]
+shape = SubResource("BoxShape3D_ghqib")
 
 [node name="Lights" type="Node3D" parent="Map"]
 metadata/_edit_lock_ = true
@@ -771,6 +790,9 @@ metadata/_edit_lock_ = true
 
 [node name="Box" parent="Map/Interactables" instance=ExtResource("2_8gf2c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0116777, 3.14744, -14.5138)
+
+[node name="Box2" parent="Map/Interactables" instance=ExtResource("2_8gf2c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.07829, 7.71996, -11.2972)
 
 [node name="Path" type="Node3D" parent="Map"]
 script = ExtResource("3_tipha")

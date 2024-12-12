@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dmwmpe87t8ufl"]
+[gd_scene load_steps=18 format=3 uid="uid://dmwmpe87t8ufl"]
 
 [ext_resource type="Theme" uid="uid://d28ig3cmjbwey" path="res://new_theme.tres" id="1_cyfge"]
 [ext_resource type="Script" path="res://Player/player.gd" id="2_gj3l2"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://Player/mouse.gd" id="8_brhoe"]
 [ext_resource type="AudioStream" uid="uid://b21qvo7ipcifj" path="res://Player/gunshot1.wav" id="9_ut0rh"]
 [ext_resource type="AudioStream" uid="uid://doxlo81lkuiy5" path="res://Smash Mouth (Chiptune Remix).ogg" id="10_2iofh"]
+[ext_resource type="AudioStream" uid="uid://cejqats1nlhl0" path="res://Player/gunshot2.wav" id="10_qr8es"]
+[ext_resource type="AudioStream" uid="uid://b8lv8gpvljknp" path="res://Player/gunshot3.wav" id="11_iqnli"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsfdf"]
 bg_color = Color(0.311572, 0.700501, 0.28737, 1)
@@ -260,13 +262,23 @@ scale = Vector2(0.168, 0.168)
 texture = ExtResource("6_5oxu2")
 script = ExtResource("8_brhoe")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_ut0rh")
-max_polyphony = 6
-
 [node name="EndMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_2iofh")
 volume_db = -5.43
+
+[node name="Gunshots" type="Node" parent="."]
+
+[node name="gunshot1" type="AudioStreamPlayer" parent="Gunshots"]
+stream = ExtResource("9_ut0rh")
+max_polyphony = 6
+
+[node name="gunshot2" type="AudioStreamPlayer" parent="Gunshots"]
+stream = ExtResource("10_qr8es")
+max_polyphony = 6
+
+[node name="gunshot3" type="AudioStreamPlayer" parent="Gunshots"]
+stream = ExtResource("11_iqnli")
+max_polyphony = 6
 
 [connection signal="pressed" from="PauseMenu/VBoxContainer/ResumeButton" to="PauseMenu" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/SaveButton" to="PauseMenu" method="_on_save_button_pressed"]
