@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://rk1xhtbxj8td"]
+[gd_scene load_steps=7 format=3 uid="uid://rk1xhtbxj8td"]
 
 [ext_resource type="Script" path="res://World/enemy.gd" id="1_qege6"]
 [ext_resource type="Texture2D" uid="uid://c8msxkt0he73q" path="res://zombie.png" id="2_w6d18"]
+[ext_resource type="Texture2D" uid="uid://dhfh7x1levy17" path="res://World/young-man-dressed-as-cowboy-pointing-gun-portrait-A3P2AA-removebg-preview.png" id="3_28ul5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ule1q"]
 albedo_texture = ExtResource("2_w6d18")
@@ -25,7 +26,8 @@ mesh = SubResource("BoxMesh_t3re1")
 shape = SubResource("BoxShape3D_7jq3j")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+modulate = Color(0.7, 0.7, 0.7, 1)
+pixel_size = 0.0045
 billboard = 2
-shaded = true
-texture = ExtResource("2_w6d18")
+texture_filter = 4
+texture = ExtResource("3_28ul5")

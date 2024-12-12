@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://World/civilian.gd" id="1_f00y5"]
 [ext_resource type="Texture2D" uid="uid://c8msxkt0he73q" path="res://zombie.png" id="2_efqwh"]
-[ext_resource type="Texture2D" uid="uid://bfhtukxhlcaqy" path="res://World/civilian.png" id="3_ivsy1"]
+[ext_resource type="Texture2D" uid="uid://bal7tvjdt1umi" path="res://World/civilian-removebg-preview.png" id="3_ex6ot"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ule1q"]
 albedo_texture = ExtResource("2_efqwh")
@@ -26,7 +26,8 @@ mesh = SubResource("BoxMesh_t3re1")
 shape = SubResource("BoxShape3D_7jq3j")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 0, 0)
+modulate = Color(0.7, 0.7, 0.7, 1)
+pixel_size = 0.0045
 billboard = 2
-shaded = true
-texture = ExtResource("3_ivsy1")
+texture_filter = 4
+texture = ExtResource("3_ex6ot")
